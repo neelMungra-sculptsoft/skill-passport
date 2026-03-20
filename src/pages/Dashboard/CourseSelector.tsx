@@ -1,6 +1,6 @@
 import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
-import { mockData } from '../../data/mockData'
+import { mockData } from '@/data/mockData'
 
 interface CourseSelectorProps {
   selectedCourseId: string
@@ -15,7 +15,7 @@ export default function CourseSelector({ selectedCourseId, onSelect }: CourseSel
     <div className="flex justify-start pt-5">
       <div className="relative">
         <button
-          className="flex items-center gap-2 text-text text-[14px] font-medium px-4 py-2 rounded-lg border border-border bg-surface shadow-card hover:shadow-card-md transition-all"
+          className="flex items-center gap-2 text-text text-sm font-medium px-4 py-2 rounded-lg border border-border bg-surface shadow-card hover:shadow-card-md transition-all"
           onClick={() => setOpen((v) => !v)}
         >
           {course.name}
@@ -23,7 +23,7 @@ export default function CourseSelector({ selectedCourseId, onSelect }: CourseSel
         </button>
 
         {open && (
-          <div className="absolute top-full mt-1.5 left-1/2 -translate-x-1/2 bg-surface border border-border rounded-lg shadow-card-md min-w-[280px] z-10 overflow-hidden">
+          <div className="absolute top-full mt-1.5 left-1/2 -translate-x-1/2 bg-surface border border-border rounded-lg shadow-card-md min-w-70 z-10 overflow-hidden">
             {mockData.courses.map((c) => (
               <button
                 key={c.id}

@@ -1,6 +1,6 @@
 import { X, Link } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-import { socialLinks } from '../../data/socialLinks'
+import { socialLinks } from '@/data/socialLinks'
 
 const navItems = [
   { label: 'Skill scores', href: '/' },
@@ -35,7 +35,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
           <button
             key={label}
             onClick={() => handleNav(href)}
-            className="text-[22px] font-bold text-white text-center hover:text-navy-muted transition-colors"
+            className="text-2xl font-bold text-white text-center hover:text-navy-muted transition-colors"
           >
             {label}
           </button>
@@ -44,12 +44,12 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
 
       {/* Description */}
       <div className="flex flex-col gap-3 mb-8">
-        <p className="text-[13px] text-navy-subtle leading-relaxed font-semibold">
+        <p className="text-sm text-navy-subtle leading-relaxed font-semibold">
           This Skill Passport is a personalised snapshot of one participant's journey through a
           real-world innovation challenge. It highlights how they performed, what they excelled at,
           and where they can grow—based on feedback, reflection, and facilitator insight.
         </p>
-        <p className="text-[13px] text-navy-subtle leading-relaxed">
+        <p className="text-sm text-navy-subtle leading-relaxed">
           It's more than a certificate—it's a window into how someone thinks, learns, and solves
           problems.
         </p>
@@ -57,7 +57,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
           href="https://www.lumi.network"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-1.5 text-[13px] text-white font-medium"
+          className="flex items-center gap-1.5 text-sm text-white font-medium"
         >
           <Link size={13} />
           Learn more at www.lumi.network
@@ -80,7 +80,7 @@ export default function MobileMenu({ onClose }: MobileMenuProps) {
       </div>
 
       {/* Footer */}
-      <p className="text-center text-[12px] text-navy-muted">© 2025 Lumi.Network</p>
+      <p className="text-center text-xs text-navy-muted">© 2025 Lumi.Network</p>
     </div>
   )
 }

@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { mockData } from '../../data/mockData'
-import CertificateModal from '../../components/Modals/CertificateModal'
+import { mockData } from '@/data/mockData'
+import CertificateModal from '@/components/Modals/CertificateModal'
 import CourseSelector from './CourseSelector'
 import CategorySection from './CategorySection'
 import CertificationsSection from './CertificationsSection'
 import InnovationsSection from './InnovationsSection'
-import type { Certificate } from '../../types'
+import type { Certificate } from '@/types'
 
 export default function Dashboard() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -23,7 +23,7 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="max-w-[1100px] mx-auto px-4 sm:px-10 pb-16">
+    <div className="max-w-content mx-auto px-4 sm:px-10 pb-16">
       <CourseSelector selectedCourseId={selectedCourseId} onSelect={handleSelectCourse} />
       <CategorySection categories={course.categories} selectedCourseId={selectedCourseId} />
       <CertificationsSection certificates={course.certificates} onCertClick={setOpenCert} />

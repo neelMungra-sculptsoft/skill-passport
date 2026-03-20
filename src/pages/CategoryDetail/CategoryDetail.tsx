@@ -1,6 +1,6 @@
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
-import ArcChart from '../../components/Charts/ArcChart'
-import { mockData } from '../../data/mockData'
+import ArcChart from '@/components/Charts/ArcChart'
+import { mockData } from '@/data/mockData'
 
 export default function CategoryDetail() {
   const { categoryId } = useParams<{ categoryId: string }>()
@@ -23,10 +23,10 @@ export default function CategoryDetail() {
   }
 
   return (
-    <div className="max-w-[1100px] mx-auto px-4 sm:px-10 pb-16">
+    <div className="max-w-content mx-auto px-4 sm:px-10 pb-16">
       {/* Course name */}
       <div className="flex justify-center pt-5">
-        <span className="text-[15px] text-gray-500">{course.name}</span>
+        <span className="text-md text-gray-500">{course.name}</span>
       </div>
 
       {/* Back */}
@@ -51,10 +51,10 @@ export default function CategoryDetail() {
 
       <div className="flex flex-col sm:flex-row gap-5 sm:gap-8 items-start">
         {/* Category arc card */}
-        <div className="bg-white border border-gray-200 rounded-xl shadow-sm px-6 sm:px-8 py-5 sm:py-6 flex flex-row sm:flex-col items-center gap-4 sm:gap-2 w-full sm:w-auto sm:min-w-[200px] shrink-0 relative">
-          <p className="text-[15px] text-gray-700 self-start">{category.name}</p>
+        <div className="bg-white border border-gray-200 rounded-xl shadow-sm px-6 sm:px-8 py-5 sm:py-6 flex flex-row sm:flex-col items-center gap-4 sm:gap-2 w-full sm:w-auto sm:min-w-50 shrink-0 relative">
+          <p className="text-md text-gray-700 self-start">{category.name}</p>
           <ArcChart score={category.score} size={150} strokeWidth={11} />
-          <span className="absolute bottom-5 right-7 text-[13px] text-gray-400">/5</span>
+          <span className="absolute bottom-5 right-7 text-sm text-gray-400">/5</span>
         </div>
 
         {/* Skills list */}
@@ -65,8 +65,8 @@ export default function CategoryDetail() {
               className="bg-white border border-gray-200 rounded-lg shadow-sm px-5 py-4 flex justify-between items-center cursor-pointer hover:shadow-md hover:translate-x-0.5 transition-all"
               onClick={() => navigate(`/skill/${skill.id}?course=${courseId}`)}
             >
-              <span className="text-[15px] text-gray-900">{skill.name}</span>
-              <span className="text-[15px] font-semibold text-gray-900">{skill.overallScore}</span>
+              <span className="text-md text-gray-900">{skill.name}</span>
+              <span className="text-md font-semibold text-gray-900">{skill.overallScore}</span>
             </div>
           ))}
         </div>

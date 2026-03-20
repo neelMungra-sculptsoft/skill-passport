@@ -8,7 +8,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import type { Session } from '../../types'
+import type { Session } from '@/types'
 
 interface SkillProgressChartProps {
   sessions: Session[]
@@ -20,7 +20,7 @@ export default function SkillProgressChart({ sessions, skillName }: SkillProgres
 
   return (
     <div className="bg-surface border border-border rounded-lg shadow-card p-4">
-      <p className="text-[13px] font-semibold text-text mb-2">Skill Progress</p>
+      <p className="text-sm font-semibold text-text mb-2">Skill Progress</p>
       <ResponsiveContainer width="100%" height={180}>
         <LineChart data={data} margin={{ top: 10, right: 16, left: -20, bottom: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border)" vertical={false} />

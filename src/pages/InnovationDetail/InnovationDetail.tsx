@@ -1,6 +1,6 @@
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import { CornerUpLeft } from 'lucide-react'
-import { mockData } from '../../data/mockData'
+import { mockData } from '@/data/mockData'
 
 export default function InnovationDetail() {
   const { innovationId } = useParams<{ innovationId: string }>()
@@ -31,7 +31,7 @@ export default function InnovationDetail() {
   return (
     <div className="pb-16">
       {/* Hero image with overlay */}
-      <div className="relative w-full h-[260px] sm:h-[340px] overflow-hidden">
+      <div className="relative w-full h-65 sm:h-85 overflow-hidden">
         <img
           src={innovation.imageUrl}
           alt={innovation.title}
@@ -41,16 +41,16 @@ export default function InnovationDetail() {
 
         {/* Title overlay — bottom left */}
         <div className="absolute bottom-6 left-6 sm:left-10">
-          <h1 className="text-[22px] sm:text-[28px] font-bold text-white leading-tight">
+          <h1 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
             {innovation.title}
           </h1>
-          <p className="text-[13px] sm:text-[15px] text-white/80 mt-1">{innovation.subtitle}</p>
+          <p className="text-sm sm:text-md text-white/80 mt-1">{innovation.subtitle}</p>
         </div>
 
         {/* Back button — top right */}
         <button
           onClick={() => navigate(`/?course=${courseId}`)}
-          className="absolute top-5 right-5 sm:right-8 flex items-center gap-1.5 text-white text-[13px] font-medium hover:opacity-80 transition-opacity"
+          className="absolute top-5 right-5 sm:right-8 flex items-center gap-1.5 text-white text-sm font-medium hover:opacity-80 transition-opacity"
         >
           <CornerUpLeft size={15} />
           Back
@@ -58,16 +58,16 @@ export default function InnovationDetail() {
       </div>
 
       {/* Content */}
-      <div className="max-w-[1100px] mx-auto px-4 sm:px-10 mt-8">
+      <div className="max-w-content mx-auto px-4 sm:px-10 mt-8">
         {/* Problem + Solution cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
           <div className="bg-surface border border-border rounded-xl shadow-card p-6">
-            <p className="text-[15px] font-semibold text-text mb-3">The Problem</p>
-            <p className="text-[13px] text-text-muted leading-relaxed">{innovation.problem}</p>
+            <p className="text-md font-semibold text-text mb-3">The Problem</p>
+            <p className="text-sm text-text-muted leading-relaxed">{innovation.problem}</p>
           </div>
           <div className="bg-surface border border-border rounded-xl shadow-card p-6">
-            <p className="text-[15px] font-semibold text-text mb-3">The Solution</p>
-            <p className="text-[13px] text-text-muted leading-relaxed">{innovation.solution}</p>
+            <p className="text-md font-semibold text-text mb-3">The Solution</p>
+            <p className="text-sm text-text-muted leading-relaxed">{innovation.solution}</p>
           </div>
         </div>
 

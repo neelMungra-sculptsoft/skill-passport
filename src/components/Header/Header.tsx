@@ -1,7 +1,7 @@
 import { ChevronDown, Info, Menu } from 'lucide-react'
 import { useState } from 'react'
-import { LumiLogo } from '../../assets'
-import ScoreInfoModal from '../Modals/ScoreInfoModal'
+import { LumiLogo } from '@/assets'
+import ScoreInfoModal from '@/components/Modals/ScoreInfoModal'
 import HeaderDescription from './HeaderDescription'
 import MobileMenu from './MobileMenu'
 import SocialLinks from './SocialLinks'
@@ -21,7 +21,7 @@ export default function Header({ learner }: HeaderProps) {
         {/* Mobile header */}
         <div className="flex sm:hidden items-center justify-between px-4 py-3">
           <img src={LumiLogo} alt="Lumi" className="h-8 w-auto" />
-          <h1 className="text-[15px] font-semibold text-white tracking-tight">
+          <h1 className="text-md font-semibold text-white tracking-tight">
             {learner}'s Skill Passport
           </h1>
           <button
@@ -46,7 +46,7 @@ export default function Header({ learner }: HeaderProps) {
               {/* Title + description */}
               <div className="flex flex-col gap-1 min-w-0">
                 <div className="flex items-center gap-2">
-                  <h1 className="text-[22px] font-semibold text-white tracking-tight">
+                  <h1 className="text-2xl font-semibold text-white tracking-tight">
                     {learner}'s Skill Passport
                   </h1>
                   <button
@@ -57,7 +57,7 @@ export default function Header({ learner }: HeaderProps) {
                     <Info size={16} />
                   </button>
                 </div>
-                <p className="text-[13px] text-navy-muted leading-relaxed max-w-[520px]">
+                <p className="text-sm text-navy-muted leading-relaxed max-w-130">
                   Welcome to the skill overview. Here you can see how the participant has performed
                   in developing their AI, Durable and Domain Skills compared to participants across
                   the global Lumi Network:

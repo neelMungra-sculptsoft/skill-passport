@@ -1,8 +1,8 @@
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
-import { mockData } from '../../data/mockData'
-import EvidenceCarousel from '../../components/Skill/EvidenceCarousel'
-import SessionFeedback from '../../components/Skill/SessionFeedback'
-import SkillProgressChart from '../../components/Charts/SkillProgressChart'
+import { mockData } from '@/data/mockData'
+import EvidenceCarousel from '@/components/Skill/EvidenceCarousel'
+import SessionFeedback from '@/components/Skill/SessionFeedback'
+import SkillProgressChart from '@/components/Charts/SkillProgressChart'
 
 export default function SkillDetail() {
   const { skillId } = useParams<{ skillId: string }>()
@@ -34,10 +34,10 @@ export default function SkillDetail() {
   }
 
   return (
-    <div className="max-w-[1100px] mx-auto px-4 sm:px-10 pb-16">
+    <div className="max-w-content mx-auto px-4 sm:px-10 pb-16">
       {/* Course name */}
       <div className="flex justify-center pt-5">
-        <span className="text-[15px] text-gray-500">{course.name}</span>
+        <span className="text-md text-gray-500">{course.name}</span>
       </div>
 
       {/* Back */}
@@ -60,19 +60,19 @@ export default function SkillDetail() {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-6 items-start">
+      <div className="grid grid-cols-1 lg:grid-skill-detail gap-6 items-start">
         {/* Left column */}
         <div className="flex flex-col gap-4">
           {/* Skill name + score */}
           <div className="bg-white border border-gray-200 rounded-lg shadow-sm px-5 py-4 flex justify-between items-center">
-            <span className="text-[16px] font-medium text-gray-900">{skill.name}</span>
-            <span className="text-[22px] font-semibold text-gray-900">{skill.overallScore}</span>
+            <span className="text-base font-medium text-gray-900">{skill.name}</span>
+            <span className="text-2xl font-semibold text-gray-900">{skill.overallScore}</span>
           </div>
 
           {/* Description */}
           <div className="bg-white border border-gray-200 rounded-lg shadow-sm px-5 py-4">
             <p className="text-sm font-semibold text-gray-900 mb-2">Skill Description</p>
-            <p className="text-[13px] text-gray-500 leading-relaxed">{skill.description}</p>
+            <p className="text-sm text-gray-500 leading-relaxed">{skill.description}</p>
           </div>
 
           {/* Evidence carousels */}

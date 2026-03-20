@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import type { Innovation } from '../../types'
+import type { Innovation } from '@/types'
 
 interface InnovationsSectionProps {
   innovations: Innovation[]
@@ -15,24 +15,24 @@ export default function InnovationsSection({
 
   return (
     <div className="mt-12">
-      <h2 className="text-[18px] font-medium text-text mb-4">Innovations</h2>
+      <h2 className="text-lg font-medium text-text mb-4">Innovations</h2>
       <div className="flex gap-4 flex-wrap">
         {innovations.map((inno) => (
           <div
             key={inno.id}
-            className="bg-surface border border-border rounded-xl shadow-card p-5 flex gap-5 items-start w-full sm:max-w-[420px] cursor-pointer hover:shadow-card-md transition-shadow"
+            className="bg-surface border border-border rounded-xl shadow-card p-5 flex gap-5 items-start w-full sm:max-w-105 cursor-pointer hover:shadow-card-md transition-shadow"
             onClick={() => navigate(`/innovation/${inno.id}?course=${selectedCourseId}`)}
           >
             <div className="flex-1 min-w-0">
-              <p className="text-[15px] font-semibold text-text mb-1.5">{inno.title}</p>
-              <p className="text-[13px] text-text-soft mb-1">Completed On {inno.completedOn}</p>
-              <p className="text-[13px] text-text-muted mb-3">{inno.subtitle}</p>
-              <span className="text-[12px] text-primary font-medium">{inno.tag}</span>
+              <p className="text-md font-semibold text-text mb-1.5">{inno.title}</p>
+              <p className="text-sm text-text-soft mb-1">Completed On {inno.completedOn}</p>
+              <p className="text-sm text-text-muted mb-3">{inno.subtitle}</p>
+              <span className="text-xs text-primary font-medium">{inno.tag}</span>
             </div>
             <img
               src={inno.imageUrl}
               alt={inno.title}
-              className="w-[120px] h-[96px] object-cover rounded-md shrink-0"
+              className="w-30 h-24 object-cover rounded-md shrink-0"
               loading="lazy"
             />
           </div>

@@ -21,13 +21,13 @@ export default function ScoreInfoModal({ onClose }: ScoreInfoModalProps) {
       onClick={onClose}
     >
       <div
-        className="bg-surface rounded-xl shadow-card-md w-full max-w-[480px] mx-4 overflow-hidden max-h-[90vh] overflow-y-auto"
+        className="bg-surface rounded-xl shadow-card-md w-full max-w-120 mx-4 overflow-hidden max-h-modal overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Tab bar */}
         <div className="flex items-center justify-between px-6 pt-5 pb-0 border-b border-border">
           <div className="flex gap-6">
-            <span className="text-[13px] font-semibold text-accent border-b-2 border-accent pb-3">
+            <span className="text-sm font-semibold text-accent border-b-2 border-accent pb-3">
               Overview
             </span>
           </div>
@@ -51,9 +51,9 @@ export default function ScoreInfoModal({ onClose }: ScoreInfoModalProps) {
 
         {/* Content */}
         <div className="px-6 py-5">
-          <p className="text-[15px] font-semibold text-text mb-4">📊 What the Scores Mean</p>
+          <p className="text-md font-semibold text-text mb-4">📊 What the Scores Mean</p>
 
-          <table className="w-full text-[13px]">
+          <table className="w-full text-sm">
             <thead>
               <tr className="text-left">
                 <th className="font-semibold text-text pb-2 w-16">Score</th>

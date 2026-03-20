@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { Session } from '../../types'
+import type { Session } from '@/types'
 
 interface SessionFeedbackProps {
   sessions: Session[]
@@ -12,28 +12,24 @@ export default function SessionFeedback({ sessions }: SessionFeedbackProps) {
   return (
     <div className="bg-surface border border-border rounded-lg shadow-card p-4">
       <div className="flex justify-between items-center mb-3.5">
-        <span className="text-[13px] font-semibold text-text">Session: {session.sessionId}</span>
-        <span className="text-[13px] text-text-muted">
+        <span className="text-sm font-semibold text-text">Session: {session.sessionId}</span>
+        <span className="text-sm text-text-muted">
           Score: <span className="text-accent font-semibold">{session.score}</span>
         </span>
       </div>
 
       <div className="flex flex-col gap-1.5 mb-4">
-        <p className="text-[13px] font-semibold text-text">What went well:</p>
-        <p className="text-[13px] text-text-muted leading-relaxed italic">
-          {session.feedback.good}
-        </p>
-        <p className="text-[13px] font-semibold text-primary mt-2">Areas for Improvement:</p>
-        <p className="text-[13px] text-primary leading-relaxed italic">
-          {session.feedback.improve}
-        </p>
+        <p className="text-sm font-semibold text-text">What went well:</p>
+        <p className="text-sm text-text-muted leading-relaxed italic">{session.feedback.good}</p>
+        <p className="text-sm font-semibold text-primary mt-2">Areas for Improvement:</p>
+        <p className="text-sm text-primary leading-relaxed italic">{session.feedback.improve}</p>
       </div>
 
       <div className="flex justify-between items-center">
         {current > 0 ? (
           <button
             onClick={() => setCurrent(current - 1)}
-            className="text-[13px] text-primary font-medium hover:opacity-70 transition-opacity"
+            className="text-sm text-primary font-medium hover:opacity-70 transition-opacity"
           >
             ← Prev
           </button>
@@ -43,7 +39,7 @@ export default function SessionFeedback({ sessions }: SessionFeedbackProps) {
         {current < sessions.length - 1 && (
           <button
             onClick={() => setCurrent(current + 1)}
-            className="text-[13px] text-primary font-medium hover:opacity-70 transition-opacity"
+            className="text-sm text-primary font-medium hover:opacity-70 transition-opacity"
           >
             Next →
           </button>

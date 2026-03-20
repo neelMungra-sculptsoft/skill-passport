@@ -1,4 +1,4 @@
-import type { LearnerData } from '../types'
+import type { LearnerData } from '@/types'
 
 export const mockData: LearnerData = {
   learner: 'Emily (TL A)',
