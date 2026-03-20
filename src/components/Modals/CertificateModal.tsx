@@ -1,4 +1,4 @@
-import type { Certificate } from '../types'
+import type { Certificate } from '../../types'
 
 interface CertificateModalProps {
   certificate: Certificate

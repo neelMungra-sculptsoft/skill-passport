@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import type { Assignment } from '../types'
+import type { Assignment } from '../../types'
 
 interface EvidenceCarouselProps {
   title: string
@@ -24,7 +24,7 @@ export default function EvidenceCarousel({ title, assignments }: EvidenceCarouse
         {assignments.map((a, i) => (
           <div
             key={i}
-            className="flex-shrink-0 w-[180px] h-[130px] rounded-lg overflow-hidden border border-gray-200 shadow-sm"
+            className="shrink-0 w-[180px] h-[130px] rounded-lg overflow-hidden border border-gray-200 shadow-sm"
           >
             <img src={a.url} alt={a.title} className="w-full h-full object-cover" loading="lazy" />
           </div>
@@ -34,7 +34,7 @@ export default function EvidenceCarousel({ title, assignments }: EvidenceCarouse
         <button
           onClick={() => scroll('left')}
           aria-label="Scroll left"
-          className="text-xl text-gray-400 hover:text-gray-700 w-6 h-6 flex items-center justify-center flex-shrink-0"
+          className="text-xl text-gray-400 hover:text-gray-700 w-6 h-6 flex items-center justify-center shrink-0"
         >
           ‹
         </button>
@@ -44,7 +44,7 @@ export default function EvidenceCarousel({ title, assignments }: EvidenceCarouse
         <button
           onClick={() => scroll('right')}
           aria-label="Scroll right"
-          className="text-xl text-gray-400 hover:text-gray-700 w-6 h-6 flex items-center justify-center flex-shrink-0"
+          className="text-xl text-gray-400 hover:text-gray-700 w-6 h-6 flex items-center justify-center shrink-0"
         >
           ›
         </button>

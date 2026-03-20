@@ -1,14 +1,14 @@
 import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
   CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
   ResponsiveContainer,
   Tooltip,
-  Legend,
+  XAxis,
+  YAxis,
 } from 'recharts'
-import type { Session } from '../types'
+import type { Session } from '../../types'
 
 interface SkillProgressChartProps {
   sessions: Session[]
